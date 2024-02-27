@@ -1,0 +1,112 @@
+<html>
+<head>
+  <title>Recipe Builder</title>
+  <link rel="stylesheet" href="style.css"> <!-- Don't forget this may not work for you if the name is different on your files, codepen won't need it at least -->
+</head>
+
+<body>  
+  <section class="form">
+    <p> If you want create a recipe book please login using your username and password</p>
+    <p id="showloginbutton">Click on the login button to see the form.</p>
+      <input type="Button" name="Submit" value="Show Login Form" class="button1" onclick="showform()">
+    <p id="hideform" class="hide">Click on the hide button to hide the form. <input id="hideloginbutton" type="Button" name="Submit" value="Hide Login Form" class="button1" onclick="hideform()"></p>
+
+    <!--* Table -->
+    <tr id="loginform" class=novisibility>
+      <form id="login" name="login" method="post" action="" class=hide>
+        <table width="384" cellpadding="0" cellspacing="1" class="gridTable">
+          <tr>
+            <td valign="middle" class="gridHeader" colspan="2">Welcome to the Recipe Builder</td>
+          </tr>
+          <tr>
+            <td colspan="2" valign="top" class="gridHeader">Login</td>
+          </tr>
+          <tr>
+            <td height="21" colspan="2" valign="middle">Please Enter Username and password.</td>
+          </tr>
+          <tr>
+            <td valign="top">User Name:<span class="red">*</span></td>
+            <td valign="top"><input name="username" type="text" class="inputText" id="username" value=""    size="30" maxlength="32" required /></td>
+          </tr>
+          <tr>
+            <td valign="top">Password:<span class="red">*</span></td>
+            <td valign="top"><input name="password" type="password" class="inputText" id="password"     value="" size="30" maxlength="32" required /></td>
+          </tr>
+        
+          <tr>
+            <td valign="top" colspan="2"><input type="Button" id="loginButton" name="Submit" value="Login"     class="gridHeader" onclick="showvalues()"/>
+              &nbsp;</td>
+          </tr>
+        </table>
+      </form>
+    </tr>
+
+  </section>
+
+  <header class="hidden">
+    <!--* Everything with .hidden will have opacity: 0; in the CSS, JS will add .show if it's "intersecting" with the screen. .show has the CSS properties to update to opacity: 1; and using a transition on .hidden makes it appear at the rate of our choosing. -->
+    <h1 class="banner1 hidden">Recipe Book</h1>
+  </header>
+
+  <section>
+    <div class="flex">
+      <h2 class="recipe1 hidden">Sweet potato cakes with kimchi mayo</h2>
+      <div class="flex">
+        <p class="dark-text hidden">Too bright? Here's Dark-Mode <span>&rarr;</span></p>
+        <div class="checkbox-wrapper-8"> <!--* Checkbox!! -->
+        <input class="tgl tgl-skewed" id="cb3-8" onclick="addDarkMode()" type="checkbox"/>
+        <label class="tgl-btn" data-tg-off="Dark" data-tg-on="Default" for="cb3-8"></label>
+        </div>
+      </div>
+    </div>
+    <img class="hidden" src="https://i.ibb.co/vkmnY6V/chinh-le-duc-w86w-DED-f-B8-unsplash.jpg" alt="Image of stack of sweet potato pancakes.">
+  </section>
+  <div class="hidden">
+    <h3>Ingredients</h3>
+    <h4>For the sweet potato cakes</h4>
+    <!--! Added h4 tags for these, since they don't have the li tag, not sure how it will work so if it's bad please change it back lol -->
+    <ul class="hidden">
+      <li><b>400g sweet potatoes</b>(2 medium)</li>
+      <li><b>1 green finger chilli</b>, very finely chopped</li>
+      <li><b>100g sweetcorn</b>, drained</li>
+      <li><b>a handful of fresh coriander</b>, chopped plus extra to serve</li>
+      <li><b>1/2 tsp salt</b></li>
+      <li><b>1 fat clove of garlic</b>, crushed</li>
+      <li><b>3 spring onions</b>, finely sliced</li>
+      <li><b>rapeseed oil</b>, to fry</li>
+    </ul>
+    <h4 class="hidden">For the kimchi mayo</h4>
+    <!--! Added h4 tag here too -->
+    <ul class="hidden">
+      <li><b>50g kimchi</b></li>
+      <li><b>100g mayonnaise</b></li>
+    </ul>
+    <ol class="hidden">
+      <li>Preheat the oven to 180•C fan/200•C/gas 6.</li>
+      <li>Peel the sweet potatoes and cut into 3cm-thick chunks, then place on an oven tray and bake for 25 to 30 minuntes until tender and a knife slips through them easily. Leave them to cool, then place in a bowl and mash with a fork until smooth.</li>
+      <li>Meanwhile make the kimchi mayo by blending the kimchi and mayonnaise together, either in the small bowl of a food processor or using a stick blender. Scrape into a serving bowl and leave to one side.</li>
+      <li>To make the cakes, add the chilli, sweetcorn, coriander, salt, garlic and spring onions to the mashed sweet potato and mix very well with your hands. Bring together into a ball. Cut the ball in half, then cut each half into 4 pieces so you have 8 equal pieces. Take a piece, roll between your palms to form a ball, then flatten into a round patty around 1cm thick. Place on a plate, then shape the rest.</li>
+      <li>To cook the cakes, heat a teaspoon of oil in a large oil in a large non-stick frying pan over a medium-high heat. When hot, add 4 cakes (or as many as you're able to fit) to the pan and fry for 5 minutes, turning halfway through, or when lovely and golden on each side. (you can help them warm on a plate in the oven at 100•C fan/120•C/250•F/gas1/2.)</li>
+      <li>When you're ready to eat, place a couple of cakes on each plate, sprinkle with coriander and serve with kimchi mayo.</li>
+    </ol>
+  </div>
+
+  <footer>
+    <h3 class="hidden">More Recipes</h3>
+    <div class="col hidden">
+      <ul>
+        <li><a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiwvL-048uEAxWn9LsIHd3DAjUQFnoECAcQAQ&url=https%3A%2F%2Fwww.bbcgoodfood.com%2Frecipes%2Fno-fuss-shepherds-pie&usg=AOvVaw013lEnN51rYEnB3NNxGb2H&opi=89978449">Shepherds Pie</a></li>
+        <li><a href="https://thehappyfoodie.co.uk/recipes/nadiya-hussains-chocolate-cookie-pie/">Chocolate Cookie Pie and Ice Cream</a></li>
+        <li><a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwj5zIzG48uEAxVw_rsIHY_wACAQFnoECA8QAQ&url=https%3A%2F%2Fwww.bbcgoodfood.com%2Frecipes%2Fcrispy-duck-pancakes&usg=AOvVaw3bGpaE8OKtVQwQyGX3RH0S&opi=89978449">Crispy Aromatic Duck Pancakes</a></li>
+        <li><a href="https://louisekeats.com/recipe/chille-con-carne/">Chilli Con Carne</a></li>
+        <li><a href="https://www.kitchensanctuary.com/onion-bhaji/">Onion Bhajis</a></li>
+      </ul>
+    </div>
+  </footer>
+
+
+
+  <script src='main.js'></script>
+  <!--* JS is down here now because it doesn't seem to work with the rest of the links in the head. DON'T FORGET TO CHECK THE NAME OF THE FILE IS THE SAME AS IS ON YOUR DEVICE -->
+</body>
+</html>

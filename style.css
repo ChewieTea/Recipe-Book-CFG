@@ -183,6 +183,7 @@ table {
 .checkbox-wrapper-8 .tgl + .tgl-btn {
   box-sizing: border-box;
 }
+
 .checkbox-wrapper-8 .tgl::-moz-selection,
 .checkbox-wrapper-8 .tgl:after::-moz-selection,
 .checkbox-wrapper-8 .tgl:before::-moz-selection,
@@ -236,7 +237,7 @@ table {
   backface-visibility: hidden;
   transition: all 0.2s ease;
   font-family: sans-serif;
-  background: darkgrey;
+  background: #001;
   color: #fff;
 }
 .checkbox-wrapper-8 .tgl-skewed + .tgl-btn:after,
